@@ -1,0 +1,108 @@
+JFDML JFormDesigner: "6.0.5.0.178" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "insets rel,hidemode 3"
+			"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][grow,fill]"
+			"$rowConstraints": "[][32][grow,fill]"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 2
+			"title": "Mandala"
+			"$locationPolicy": 1
+			"$sizePolicy": 1
+			auxiliary() {
+				"JavaCodeGenerator.postInitCode": "this.contentPane = (JPanel) this.getContentPane();\nthis.contentPane.setBackground(this.getBackground());\nLayoutManager layout = this.contentPane.getLayout();\nif (layout instanceof MigLayout) {\n    this.migLayoutManager = (MigLayout) layout;\n}\n"
+			}
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labelSoubor"
+				"text": "Soubor"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 0"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnUlozit"
+				"text": "Uložit jako"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "ulozitJako", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 0 3 1,alignx center,growx 0"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnNahrat"
+				"text": "Nahrát"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "otevriMenu", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 0 4 1,growx"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labelAktualniBarva"
+				"text": "Aktuální barva:"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 1,alignx left,growx 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labBarva1"
+				"opaque": true
+				"background": new java.awt.Color( 255, 255, 153, 255 )
+				"preferredSize": new java.awt.Dimension( 32, 32 )
+				"foreground": sfield java.awt.Color gray
+				"horizontalAlignment": 0
+				"font": &Font0 new java.awt.Font( ".SF NS Text", 0, 20 )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "labBarva1ZmenaBarvy", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 1,alignx label,growx 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labBarva2"
+				"background": new java.awt.Color( 0, 204, 204, 255 )
+				"opaque": true
+				"preferredSize": new java.awt.Dimension( 32, 32 )
+				"foreground": sfield java.awt.Color gray
+				"horizontalAlignment": 0
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "labBarva2ZmenaBarvy", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 1,alignx label,growx 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labBarva3"
+				"opaque": true
+				"background": new java.awt.Color( 204, 204, 255, 255 )
+				"preferredSize": new java.awt.Dimension( 32, 32 )
+				"foreground": sfield java.awt.Color gray
+				"horizontalAlignment": 0
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "labBarva3ZmenaBarvy", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 1,alignx label,growx 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labBarva4"
+				"background": new java.awt.Color( 255, 153, 153, 255 )
+				"opaque": true
+				"preferredSize": new java.awt.Dimension( 32, 32 )
+				"foreground": sfield java.awt.Color gray
+				"horizontalAlignment": 0
+				"font": #Font0
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "labBarva4ZmenaBarvy", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 1,alignx label,growx 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labObrazek"
+				"background": new java.awt.Color( 255, 255, 255, 255 )
+				"opaque": true
+				"horizontalAlignment": 2
+				"verticalAlignment": 1
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "onMousePress", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 2 10 1,wmin 32,hmin 32"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 660, 755 )
+		} )
+	}
+}
